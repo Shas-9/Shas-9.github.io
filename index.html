@@ -119,13 +119,13 @@ Implemented an octree-based spatial compression algorithm achieving
 </li>
 
 <li>
-Designed an automated testing framework validating compressed outputs against
-original datasets.
+Designed an automated testing framework that verifies correctness of compressed outputs against uncompressed input data,
+ensuring algorithmic correctness independent of compression strategy and enabling automated, extensible testing.
 </li>
 
 <li>
-Built a cross-platform CI pipeline enabling reproducible Linux and Windows builds,
-improving development velocity.
+Built a cross-platform CI pipeline with automated testing and reproducible Linux and Windows builds, integrating
+cross-compilation and artifact generation into the development workflow, improving team velocity by 1.5x.
 </li>
 
 </ul>
@@ -162,7 +162,7 @@ Simulated rover navigation scenarios in Gazebo for Australian Rover Challenge pr
 <h2>Daily Iftar Registration System</h2>
 
 <p>
-Production backend supporting daily event registrations used by 70+ users.
+Production backend supporting daily event registrations used by 70+ daily users.
 Built scalable REST APIs and MongoDB schemas while continuously shipping new features.
 </p>
 
@@ -192,7 +192,8 @@ concurrent nodes without external libraries.
 
 <ul>
 <li>TCP messaging protocol implementing prepare, promise, accept and learn phases.</li>
-<li>Failure simulation framework including latency and node crashes.</li>
+<li>Failure simulation framework introducing latency, message loss, and node crashes to validate consensus
+correctness under concurrent proposals and partial system failures.</li>
 <li>JUnit testing framework for distributed correctness.</li>
 </ul>
 
@@ -214,6 +215,7 @@ Distributed data aggregation server implementing Lamport clocks for causal consi
 </p>
 
 <ul>
+<li>Lamport logical clocks without use of any external libraries.</li>
 <li>Concurrent client and content server architecture.</li>
 <li>Thread-safe request processing.</li>
 <li>Persistent storage with crash recovery and stale source expiry.</li>
@@ -238,9 +240,12 @@ SVM optimization and neural network backpropagation.
 </p>
 
 <ul>
-<li>Quadratic programming SVM solver with RBF kernels.</li>
-<li>Two-layer neural network using mini-batch SGD.</li>
-<li>End-to-end ML training pipeline.</li>
+<li>Implemented a Support Vector Machine from scratch in Python by solving the dual optimization problem with
+quadratic programming, including RBF kernel support and hyperparameter tuning using validation data</li>
+<li>Built a two-layer neural network from scratch using forward and backward propagation, implementing core modules
+(Linear, ReLU, Cross-Entropy) and training with mini-batch SGD on a dataset with 200 features and 8.5k samples.</li>
+<li>Developed an end-to-end ML training pipeline including data standardization, train/validation/test splits,
+hyperparameter search, and performance evaluation using accuracy metrics with Sklearn</li>
 </ul>
 
 <a href="https://github.com/Shas-9/SVM-and-Neural-Network-Implementation" class="button">Github</a>
@@ -261,9 +266,10 @@ Procedurally generated maze exploration game written in C++ using SFML.
 </p>
 
 <ul>
-<li>Modular game architecture.</li>
-<li>Enemy AI and player mechanics.</li>
-<li>UI and game state transitions.</li>
+<li>Engineered modular game architecture, separating game state, entities, and UI for maintainability and scalability.</li>
+<li>Integrated enemy AI and player mechanics within the existing procedural random maze generation system, including
+real-time collision handling and health management.</li>
+<li>Designed the game UI, with seamless navigation and state transitions without affecting game loop performance.</li>
 </ul>
 
 <a href="https://github.com/Shas-9/Labyrinth-game" class="button">Github</a>
