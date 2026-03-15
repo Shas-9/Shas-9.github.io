@@ -65,7 +65,12 @@ const DATA = {
       tech: ["TypeScript", "Node.js", "MongoDB", "Docker"],
       link: "https://aumsa.com.au",
       linkLabel: "Live Site",
-      desc: "Production backend supporting 70+ daily users for live event registration, with DST-safe timezone handling and scalable MongoDB schemas.",
+      desc: "Production backend supporting 70+ daily users for live event registration.",
+      points: [
+        "Delivered production-ready backend features under tight release cycles, building and iterating on RESTful APIs (Node.js, MongoDB) to support live event registration used by 70+ daily users.",
+        "Architected DST-safe, timezone-aware date handling (Australia/Adelaide), eliminating off-by-one scheduling bugs.",
+        "Designed scalable MongoDB database schemas and API contracts to support rapid feature expansion and seamless frontend integration.",
+      ],
     },
     {
       title: "Paxos Consensus Algorithm",
@@ -73,7 +78,12 @@ const DATA = {
       tech: ["Java", "JUnit", "Bash"],
       link: "https://github.com/Shas-9/Paxos",
       linkLabel: "GitHub",
-      desc: "Distributed Paxos from scratch with TCP socket messaging, concurrent node support, and a failure simulation framework for fault tolerance testing.",
+      desc: "Distributed Paxos from scratch with TCP socket messaging and fault tolerance testing.",
+      points: [
+        "Implemented the Paxos Consensus Algorithm without use of any external libraries, enabling multiple concurrent nodes to elect a single leader despite network delays and node failures.",
+        "Developed a TCP socket-based messaging protocol supporting Paxos phases (prepare, promise, accept, learn) with nodes dynamically acting as proposers, acceptors, and learners.",
+        "Designed a failure simulation framework introducing latency, message loss, and node crashes to validate consensus correctness under concurrent proposals and partial system failures.",
+      ],
     },
     {
       title: "Distributed Weather Aggregation Server",
@@ -81,7 +91,12 @@ const DATA = {
       tech: ["Java", "JUnit", "REST API"],
       link: "https://github.com/Shas-9/Weather-Aggregation-Server",
       linkLabel: "GitHub",
-      desc: "Aggregation server implementing Lamport clocks for causal consistency, with multi-threaded processing, crash recovery, and stale data expiry.",
+      desc: "Aggregation server implementing Lamport clocks for causal consistency.",
+      points: [
+        "Engineered a distributed data aggregation system supporting concurrent clients and content servers.",
+        "Implemented Lamport logical clocks to maintain causal consistency and deterministic ordering of concurrent updates across distributed components, without use of external libraries.",
+        "Developed a multi-threaded aggregation server with thread-safe request processing, persistent storage with crash recovery and automated 30s expiry of stale data sources.",
+      ],
     },
     {
       title: "SVM & Neural Network Implementation",
@@ -89,7 +104,12 @@ const DATA = {
       tech: ["Python", "NumPy", "Sklearn"],
       link: "https://github.com/Shas-9/SVM-and-Neural-Network-Implementation",
       linkLabel: "GitHub",
-      desc: "SVM and two-layer neural network built from scratch — dual optimization with RBF kernels, and mini-batch SGD on 200 features and 8.5k samples.",
+      desc: "SVM and neural network built entirely from scratch.",
+      points: [
+        "Implemented a Support Vector Machine from scratch by solving the dual optimization problem with quadratic programming, including RBF kernel support and hyperparameter tuning.",
+        "Built a two-layer neural network from scratch using forward and backward propagation, implementing core modules (Linear, ReLU, Cross-Entropy) and training with mini-batch SGD on 200 features and 8.5k samples.",
+        "Developed an end-to-end ML training pipeline including data standardization, train/validation/test splits, hyperparameter search, and performance evaluation.",
+      ],
     },
     {
       title: "CatQuest – 2D Maze Game",
@@ -97,7 +117,12 @@ const DATA = {
       tech: ["C++", "SFML"],
       link: "https://github.com/Shas-9/Labyrinth-game",
       linkLabel: "GitHub",
-      desc: "Procedurally generated maze game with modular architecture, enemy AI, and real-time collision handling built in C++.",
+      desc: "Procedurally generated maze game written in C++ using SFML.",
+      points: [
+        "Engineered modular game architecture, separating game state, entities, and UI for maintainability and scalability.",
+        "Integrated enemy AI and player mechanics within the existing procedural random maze generation system, including real-time collision handling and health management.",
+        "Designed the game UI with seamless navigation and state transitions without affecting game loop performance.",
+      ],
     },
     {
       title: "Monkey Run – Unihack 2024",
@@ -105,7 +130,12 @@ const DATA = {
       tech: ["GDScript", "Godot", "Python", "MediaPipe"],
       link: "https://github.com/rayokamoto/unihack",
       linkLabel: "GitHub",
-      desc: "Motion-controlled endless runner using real-time webcam input via MediaPipe for player movement detection.",
+      desc: "Motion-controlled endless runner using real-time webcam input.",
+      points: [
+        "Developed an endless runner game with randomised object generation using the Godot game engine.",
+        "Implemented input detection by tracking player movement through webcam using the MediaPipe ML framework.",
+        "Integrated input detection system with game mechanics to deliver a cohesive gaming experience.",
+      ],
     },
   ],
   extra: [
@@ -759,16 +789,15 @@ function Projects() {
           <div key={i} className="pj-c fade">
             <div className="pj-ttl">{p.title}</div>
             <div className="pj-per">{p.period}</div>
-            <p className="pj-desc">{p.desc}</p>
-            <div className="pj-tgs">
-              {p.tech.map((t) => <span key={t} className="tg-xs">{t}</span>)}
+            <div className="tg-w" style={{ marginBottom: "0.9rem" }}>
+              {p.tech.map((t) => (
+                <span key={t} className="tg">{t}</span>
+              ))}
             </div>
-            <a
-              className="pj-lnk"
-              href={p.link}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <ul className="tl-pts" style={{ marginBottom: "0.9rem" }}>
+              {p.points.map((pt, j) => <li key={j}>{pt}</li>)}
+            </ul>
+            <a className="pj-lnk" href={p.link} target="_blank" rel="noreferrer">
               {p.linkLabel} ↗
             </a>
           </div>
