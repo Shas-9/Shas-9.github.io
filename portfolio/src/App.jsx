@@ -7,7 +7,7 @@ const DATA = {
   name: "Sharzil Hasnine",
   role: "Software Engineer",
   interests: "Distributed Systems · Algorithms · Systems Programming",
-  bio: "Pursuing a Bachelor of Computer Science (Advanced) at the University of Adelaide, building industry experience through systems programming placements and open-source work.",
+  bio: "Software Engineer interested in Distributed Systems. Building experience through live projects and honing problem solving skills with competitive programming.",
   contact: {
     email: "sharzilhasnine975@gmail.com",
     phone: "+61 451 645 516",
@@ -663,9 +663,9 @@ function Hero() {
         Open to opportunities
       </div>
 
-      <div className="hero-curr">
+      {/* <div className="hero-curr">
         ⌖ &nbsp;Currently: Industry Placement @ Synergy IQ
-      </div>
+      </div> */}
 
       <h1 className="hero-name">
         Sharzil<br />Hasnine
