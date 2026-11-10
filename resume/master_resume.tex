@@ -1,0 +1,218 @@
+%% ============================================================================
+%%  MASTER RESUME  --  the single source of truth.
+%%
+%%  Everything you have ever done lives in this file. Two things read it:
+%%    1. LaTeX  -> builds the full "master" PDF.
+%%    2. The website (src/) -> parses this file at build time and renders
+%%       Education, Skills, Experience, Projects and Extracurriculars.
+%%
+%%  So: edit here, and both the PDF and the website update. Never edit the
+%%  same fact in two places.
+%%
+%%  ---- RULES SO THE WEBSITE CAN READ THIS FILE ------------------------------
+%%  * Keep the section names:  Education, Technical Skills, Experience,
+%%    Projects, Extracurriculars.
+%%  * Experience heading:   {\textbf{Role - Project - Organisation}}
+%%      (separate the parts with " - " = space, hyphen, space).
+%%      The LAST part is shown as the organisation, the rest as the title.
+%%  * Tech line:   {\emph{\textbf{Tech:}} A, B, C}   (comma separated)
+%%  * Link line (projects only):
+%%      {\\ \small \textbf{\emph{Link:}} \href{https://url}{text}}
+%%  * One \resumeItem{...} per bullet point.
+%%  * Skills:  \textbf{Category}{: item, item, item} \\
+%%  * Lines starting with % are ignored by BOTH LaTeX and the website, so
+%%    commenting an entry out hides it everywhere.
+%%  * Contact details (phone, email, GitHub, portfolio) are NOT here; they
+%%    live in ../shared/profile.tex.
+%%
+%%  Build the PDF:   make master-resume
+%% ============================================================================
+
+\documentclass[letterpaper,11pt]{article}
+\input{../shared/resume_preamble}
+
+\begin{document}
+
+%----------HEADING----------
+\resumeHeader
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Bachelor of Computer Science (Advanced)}{\small Feb 2023 -- Nov 2026}
+      {Adelaide University}{}
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++, Java, TypeScript, JavaScript, Python, C, GDScript, MATLAB, Bash} \\
+     \textbf{Libraries and Frameworks}{: Node.js, Spring Boot, MongoDB, MySQL, React, Flask, JUnit, Godot, Pandas, NumPy, Matplotlib, Sklearn, TensorFlow, ROS2} \\
+     \textbf{Tools and Software}{: Git, Linux, Docker, Jira, Gazebo, Nav2} \\
+    }}
+ \end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+         {\textbf{{Student Data Engineer - REDCap-KNIME Integration - Adelaide University}}}{\small Aug 2026 - Oct 2026}
+         {\emph{\textbf{Tech:}} Python, KNIME, REDCap}{}
+         \resumeItemListStart
+           \resumeItem{Prepared a controlled REDCap test dataset of 10,000 synthetic records across 64 fields, establishing a reproducible environment for validating API-based data extraction and metadata-driven ETL workflows.}
+           \resumeItem{Developed a custom Python-based KNIME node extension using PyCap to extract REDCap records and metadata through the REST API, exposing both as separate typed KNIME output tables for downstream analysis.}
+           \resumeItem{Implemented metadata-driven ETL and validation to decode categorical and checkbox fields, enforce field-level validation rules, and preserve longitudinal event and repeating-instrument context across REDCap exports.}
+         \resumeItemListEnd
+
+  \resumeSubheading
+         {\textbf{{Industry Placement - Smart Training Planner - Synergy IQ}}}{\small Mar 2026 - May 2026}
+         {\emph{\textbf{Tech:}} Python, Flask, Jira}{}
+         \resumeItemListStart
+           \resumeItem{Developed a Flask-based web application to migrate a prototype into a production-grade automated scheduling system, implementing dynamic constraint logic, visual conflict detection, and an editable user interface to eliminate manual scheduling conflicts.}
+         \resumeItemListEnd
+
+  \resumeSubheading
+         {\textbf{{Industry Project - Block Model Compression Algorithm - Maptek}}}{\small Aug 2025 - Oct 2025}
+         {\emph{\textbf{Tech:}} C++, Bash, Jira}{}
+         \resumeItemListStart
+           \resumeItem{Architected a stream-oriented lossless compression system for 3D data, optimising for speed and compression ratio.}
+           \resumeItem{Implemented an octree-based spatial compression algorithm, achieving ~98.8\% reduction in data size while improving processing speed by 2.6x over the uncompressed baseline, forming the foundation for subsequent team optimisations reaching 99.17\% compression and 1520x processing speed.}
+           \resumeItem{Designed a testing framework that verifies correctness of compressed outputs against uncompressed input data, ensuring algorithmic correctness independent of compression strategy and enabling automated, extensible testing.}
+           \resumeItem{Built a cross-platform CI pipeline with automated testing and reproducible Linux and Windows builds, integrating cross-compilation and artifact generation into the development workflow, improving team velocity by 1.5x.}
+         \resumeItemListEnd
+
+  \resumeSubheading
+         {\textbf{Software Developer - Autonomous Navigation - Adelaide Rover Team}}{\small Oct 2024 - Feb 2025}
+         {\emph{\textbf{Tech:}} Python, C++, ROS2, Nav2, Gazebo, Groot}{}
+         \resumeItemListStart
+           \resumeItem{Designed a behavior tree for the rover’s autonomous navigation pipeline using Nav2, enabling modular decision-making for tasks such as path planning, recovery behaviours, and goal execution.}
+           \resumeItem{Simulated navigation behaviour using Gazebo, supporting the Adelaide Rover Team's preparation for the Australian Rover Challenge's autonomous navigation task.}
+         \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+   \resumeSubHeadingListStart
+
+   \resumeSubheading
+         {\textbf{Daily Iftar Registration System}}{\small Feb 2026 - Mar 2026}
+         {\emph{\textbf{Tech:}} TypeScript, Node.js, MongoDB, REST API, Docker}
+         {\\ \small \textbf{\emph{Link:}} \href{https://aumsa.com.au/}{aumsa.com.au}}
+         \resumeItemListStart
+           \resumeItem{Delivered production-ready backend features under tight release cycles, building and iterating on RESTful APIs (Node.js, MongoDB) to support live event registration used by 70+ daily users.}
+           \resumeItem{Architected DST-safe, timezone-aware date handling (Australia/Adelaide), eliminating off-by-one scheduling bugs and ensuring reliable, real-world consistency for day-based operations.}
+           \resumeItem{Designed scalable MongoDB database schemas and API contracts to support rapid feature expansion and seamless frontend integration, maintaining stability while continuously deploying new functionality.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {\textbf{Paxos Consensus Algorithm}}{\small Sep 2025 - Oct 2025}
+         {\textbf{\emph{Tech:}} Java, JUnit, Bash}
+         {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Paxos}{github.com/Shas-9/Paxos}}
+         \resumeItemListStart
+           \resumeItem{Implemented the Paxos Consensus Algorithm without use of any external libraries, enabling multiple concurrent nodes to elect a single leader despite network delays and node failures.}
+           \resumeItem{Developed a TCP socket-based messaging protocol supporting Paxos phases (prepare, promise, accept, learn) with nodes dynamically acting as proposers, acceptors, and learners to achieve consensus.}
+           \resumeItem{Designed a failure simulation framework introducing latency, message loss, and node crashes to validate consensus correctness under concurrent proposals and partial system failures.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {\textbf{Distributed Weather Feed Aggregator with Lamport Clocks}}{\small Aug 2025 - Sep 2025}
+         {\textbf{\emph{Tech:}} Java, JUnit, REST API}
+         {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Weather-Aggregation-Server}{github.com/Shas-9/Weather-Aggregation-Server}}
+         \resumeItemListStart
+           \resumeItem{Engineered a distributed data aggregation system supporting concurrent clients and content servers.}
+           \resumeItem{Implemented Lamport logical clocks to maintain causal consistency and deterministic ordering of concurrent updates across distributed components, without use of external libraries.}
+           \resumeItem{Developed a multi-threaded aggregation server with thread-safe request processing, persistent storage with crash recovery and automated 30s expiry of stale data sources, ensuring system reliability under concurrent workloads.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {\textbf{SVM and Neural Network Implementation}}{\small Aug 2025 - Oct 2025}
+         {\textbf{\emph{Tech:}} Python, NumPy, Sklearn}
+         {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/SVM-and-Neural-Network-Implementation}{github.com/Shas-9/SVM-and-Neural-Network-Implementation}}
+         \resumeItemListStart
+           \resumeItem{Implemented a Support Vector Machine from scratch in Python by solving the dual optimization problem with quadratic programming, including RBF kernel support and hyperparameter tuning using validation data.}
+           \resumeItem{Built a two-layer neural network from scratch using forward and backward propagation, implementing core modules (Linear, ReLU, Cross-Entropy) and training with mini-batch SGD on a dataset with 200 features and 8.5k samples.}
+           \resumeItem{Developed an end-to-end ML training pipeline including data standardization, train/validation/test splits, hyperparameter search, and performance evaluation using accuracy metrics with Sklearn.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {\textbf{CatQuest -- 2D Maze Exploration Game}}{\small Aug 2023 - Oct 2023}
+         {\emph{\textbf{Tech:}} C++, SFML}
+         {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Labyrinth-game}{github.com/Shas-9/Labyrinth-game}}
+         \resumeItemListStart
+           \resumeItem{Engineered modular game architecture, separating game state, entities, and UI for maintainability and scalability.}
+           \resumeItem{Integrated enemy AI and player mechanics within the existing procedural random maze generation system, including real-time collision handling and health management.}
+           \resumeItem{Designed the game UI, with seamless navigation and state transitions without affecting game loop performance.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {\textbf{Monkey Run -- Unihack 2024}}{\small Mar 2024}
+         {\emph{\textbf{Tech:}} GDScript, Godot, Python, MediaPipe}
+         {\\ \textbf{\emph{Link:}} \href{https://github.com/rayokamoto/unihack}{github.com/rayokamoto/unihack}}
+         \resumeItemListStart
+           \resumeItem{Developed an endless runner game with randomised object generation using Godot game engine with GDScript.}
+           \resumeItem{Implemented input detection by tracking player movement through webcam by using MediaPipe ML framework.}
+           \resumeItem{Integrated input detection system with game mechanics to deliver a cohesive gaming experience.}
+         \resumeItemListEnd
+
+     % --- Older projects, hidden from the PDF and the website. Un-comment to show. ---
+     % \resumeProjectHeading
+     %     {\textbf{\href{https://github.com/Shas-9/Data-visualisation}{Global GDP and Internet Users -- Research}} $|$ \emph{Python, Pandas, NumPy, Matplotlib}}{}
+     %     \resumeItemListStart
+     %       \resumeItem{Analysed 60 years of data sourced from Kaggle to investigate correlation between internet user growth and GDP across nations.}
+     %       \resumeItem{Utilised Pandas library in Python to process data and perform necessary calculations and presented findings through visually compelling graphs generated using Matplotlib.}
+     %       \resumeItem{Identified key insights to discern impact of internet penetration on economic development worldwide.}
+     %     \resumeItemListEnd
+     % \resumeProjectHeading
+     %     {\textbf{\href{https://github.com/Shas-9/Password-manager}{Password Manager}} $|$ \emph{Python, CustomTkinter}}{}
+     %     \resumeItemListStart
+     %       \resumeItem{Developed a local password manager in Python, enabling convenient storage and retrieval of website and account credentials, as a practical solution for personal password management needs.}
+     %       \resumeItem{Created an intuitive user interface using CustomTkinter graphics library, facilitating quick access to stored passwords through a search feature.}
+     %     \resumeItemListEnd
+   \resumeSubHeadingListEnd
+
+
+%-----------EXTRACURRICULARS-----------
+\section{Extracurriculars}
+   \resumeSubHeadingListStart
+
+   \resumeProjectHeading
+         {\textbf{Adelaide University Competitive Programming League (AUCPL)}}{\small Mar 2026 -- Oct 2026}
+         \resumeItemListStart
+           \resumeItem{Achieved a team 2nd place finish in the Adelaide University Competitive Programming League (AUCPL) in 2026.}
+         \resumeItemListEnd
+
+   \resumeProjectHeading
+         {\textbf{Adelaide Competitive Programming League (AUCPL)}}{\small Mar 2025 -- Oct 2025}
+         \resumeItemListStart
+           \resumeItem{Achieved a team 4th place finish in the 2025 AUCPL season.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {Secretary}{\small Nov 2024 -- Aug 2026}
+         {ISSUA}{}
+         \resumeItemListStart
+           \resumeItem{Led internal communications for a 10+ member committee, producing structured meeting minutes and action item documentation to ensure organizational alignment and accountability.}
+           \resumeItem{Managed university-facing logistics including room bookings, building access, and prayer room maintenance.}
+           \resumeItem{Administered organizational knowledge management using Google Drive, maintaining structured repositories of meeting records, event documentation, and operational resources to support cross-functional collaboration.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {Events Officer}{\small Nov 2023 -- Nov 2024}
+         {ISSUA}{}
+         \resumeItemListStart
+           \resumeItem{Planned and executed society events for 100+ attendees, overseeing end-to-end logistics, budget management, and stakeholder alignment to meet organizational objectives.}
+           \resumeItem{Coordinated event setup, including venue preparation, infrastructure, and audio-visual systems.}
+           \resumeItem{Engaged with attendees and guests during events, providing support and fostering a welcoming environment.}
+         \resumeItemListEnd
+
+   \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

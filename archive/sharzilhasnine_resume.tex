@@ -1,0 +1,188 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \\
+    \end{tabular*}
+    \textit{\small #4}
+    \vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.10in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.14in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+
+%-------------------------------------------
+% RESUME
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+    \textbf{\Huge \scshape Sharzil Hasnine} \\ \vspace{5pt}
+    +61 451 645 516 $|$
+    \href{mailto:sharzilhasnine975@gmail.com}{sharzilhasnine975@gmail.com} $|$
+    \href{https://github.com/Shas-9}{github.com/Shas-9} \\
+    Portfolio: \href{https://shas-9.github.io/}{shas-9.github.io}
+\end{center}
+
+%-----------EDUCATION-----------
+
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Bachelor of Computer Science (Advanced)}
+  {\small Feb 2023 -- Nov 2026}
+  {Adelaide University}
+  {}
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+
+
+
+
+%-----------TECHNICAL EXPERIENCE-----------
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+   \resumeSubheading
+         {\textbf{{Industry Project - Block Model Compression Algorithm - Maptek}}}{\small Aug 2025 - Oct 2025}
+         {\emph{\textbf{Tech:}} C++,  Bash, Jira}{}
+         \resumeItemListStart
+           \resumeItem{Architected a stream-oriented lossless compression system for 3D data, optimising for speed and compression ratio.}
+           \resumeItem{Implemented an octree-based spatial compression algorithm, achieving ~98.8\% reduction in data size while improving processing speed by 2.6x over the uncompressed baseline, forming the foundation for subsequent team optimisations reaching 99.17\% compression and 1520x processing speed.}
+           \resumeItem{Designed a testing framework that verifies correctness of compressed outputs against uncompressed input data, ensuring algorithmic correctness independent of compression strategy and enabling automated, extensible testing.}
+           \resumeItem{Built a cross-platform CI pipeline with automated testing and reproducible Linux and Windows builds, integrating cross-compilation and artifact generation into the development workflow, improving team velocity by 1.5x.}
+         \resumeItemListEnd
+
+    \resumeSubheading{\textbf{Technical Volunteer - Autonomous navigation - Adelaide Rover Team}}{\small Oct 2024 - Feb 2025}
+    {\emph{\textbf{Tech:}} Python, C++, Ros2, Nav2, Gazebo, Groot}{}
+    \resumeItemListStart
+        \resumeItem{Designed a behavior tree for the rover’s autonomous navigation pipeline using Nav2, enabling modular decision-making for tasks such as path planning, recovery behaviours, and goal execution.}
+        \resumeItem{Simulated navigation behaviour using Gazebo, supporting the Adelaide Rover Team's preparation for the Australian Rover Challenge's autonomous navigation task.}
+    \resumeItemListEnd
+    
+
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL PROJECTS-----------
+
+\section{Projects}
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {CatQuest -- 2D Maze Exploration Game}
+  {\small Aug 2023 -- Oct 2023}
+  {Tech: C++, SFML}
+  {\textbf{Link:} \href{https://github.com/Shas-9/Labyrinth-game}{github.com/Shas-9/Labyrinth-game}}
+
+\resumeItemListStart
+
+\resumeItem{
+Developed gameplay systems for a real-time 2D maze exploration game in C++ using SFML, working with the main game loop, player state and interactive entities.
+}
+
+\resumeItem{
+Implemented enemy behaviour, player mechanics, collision detection and health systems while integrating them with an existing procedurally generated maze.
+}
+
+\resumeItem{
+Designed modular game-state and UI architecture to support menu navigation and transitions between different gameplay states without disrupting the real-time game loop.
+}
+
+\resumeItem{
+Debugged interactions between gameplay systems and refined implementation details to maintain predictable behaviour during real-time execution.
+}
+
+\resumeItemListEnd
+
+\resumeSubheading
+  {Monkey Run -- Unihack 2024}
+  {\small Mar 2024}
+  {Tech: Godot, GDScript, Python, MediaPipe}
+  {\textbf{Link:} \href{https://github.com/rayokamoto/unihack}{github.com/rayokamoto/unihack}}
+
+\resumeItemListStart
+
+\resumeItem{
+Developed an endless-runner game in Godot using GDScript, including gameplay logic and randomised obstacle generation.
+}
+
+\resumeItem{
+Implemented a Python and MediaPipe input system that translated real-time webcam-tracked player movement into game controls.
+}
+
+\resumeItem{
+Integrated the external input system with gameplay mechanics, debugging interactions between multiple components to deliver a responsive interactive experience.
+}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+\end{document}

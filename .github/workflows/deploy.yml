@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,18 +19,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The "Download CV" button serves resume/Sharzil_Hasnine_Resume.pdf,
+      # compiled fresh from LaTeX on every deploy.
+      - name: Build resume PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Sharzil_Hasnine_Resume.tex
+          working_directory: resume
+
+      - name: Add resume PDF to the site
+        run: cp resume/Sharzil_Hasnine_Resume.pdf public/Sharzil_Hasnine_Resume.pdf
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Install dependencies
-        run: npm install
-        working-directory: portfolio
+        run: npm ci
 
+      # Fails the build (instead of deploying a broken site) if
+      # resume/master_resume.tex cannot be parsed.
       - name: Build
         run: npm run build
-        working-directory: portfolio
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -37,7 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio/dist
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment

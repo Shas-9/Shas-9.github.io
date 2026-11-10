@@ -1,0 +1,49 @@
+%% ============================================================================
+%%  FINAL COVER LETTER  --  the version you actually SUBMIT for a specific job.
+%%
+%%  Workflow:  master_cover_letter.tex -> temporary_cover_letter.tex -> this file.
+%%    1. make new-cover-letter     copies the master template to temporary
+%%    2. edit temporary_cover_letter.tex for the job
+%%    3. make final-cover-letter   copies temporary -> this file and builds the PDF
+%%    4. make archive NAME=company-role   saves a snapshot under applications/
+%%
+%%  Note: step 3 OVERWRITES this file. Archive it first if you want to keep it.
+%%  (Contact details come from ../shared/profile.tex.)
+%% ============================================================================
+
+\documentclass[letterpaper,11pt]{article}
+\input{../shared/cover_letter_preamble}
+
+\begin{document}
+
+\letterHeader
+
+\vspace{10pt}
+
+
+Hiring Manager \\
+Blackmagic Design \\
+
+\vspace{5pt}
+
+\textbf{Software Engineer}
+
+Dear Hiring Manager,
+
+I am writing to apply for the Software Engineer position at Blackmagic Design. I am currently completing a Bachelor of Computer Science (Advanced) at Adelaide University and have developed practical experience across C++, algorithms, backend systems, performance optimisation, testing, debugging, and software design. I am particularly interested in this role because it combines strong software engineering fundamentals with challenging technical problem-solving and the opportunity to contribute to real products used by professionals worldwide.
+
+My strongest relevant experience comes from an industry project with Maptek, where I worked on a C++ spatial compression system for large 3D datasets. I contributed to the design and implementation of a stream-oriented, octree-based compression approach that achieved approximately 98.8\% reduction in data size while improving processing speed by 2.6 times over the uncompressed baseline. The project required careful consideration of algorithmic efficiency, memory usage, data structures, and performance trade-offs, which directly aligns with Blackmagic Design's focus on writing efficient C++ software and solving complex technical problems.
+
+As part of the same project, I developed an automated correctness-testing framework and helped build a cross-platform CI pipeline for reproducible Linux and Windows builds. This involved diagnosing implementation issues, validating compressed output against source data, refining software components, and collaborating with other team members to improve both performance and maintainability. The experience gave me a strong appreciation for clean code, reliable testing, structured debugging, and continuously improving engineering practices.
+
+I have also developed several other C++ projects that strengthened my understanding of software architecture, data structures, algorithms, and performance-sensitive programming. In my CatQuest game project using C++ and SFML, I worked on modular game architecture, entity behaviour, collision handling, health systems, and UI state transitions. I have also worked extensively with algorithmic problem-solving through competitive programming, where I regularly apply graph algorithms, dynamic programming, advanced data structures, and optimisation techniques under strict time and memory constraints. These experiences have strengthened my ability to reason carefully about correctness, efficiency, and implementation details.
+
+My backend and distributed systems projects have further developed my ability to take software from design through implementation and testing. I implemented the Paxos consensus algorithm in Java using TCP sockets and developed a multithreaded distributed weather aggregation server with persistent storage, crash recovery, and concurrent request handling. These projects involved debugging complex behaviour across multiple components, designing reliable system interactions, and validating correctness under failure and concurrent execution.
+
+Thank you for considering my application. I would welcome the opportunity to discuss how I could contribute to the Blackmagic Design team.
+\vspace{10pt}
+
+Sincerely, \\
+\profileName
+
+\end{document}

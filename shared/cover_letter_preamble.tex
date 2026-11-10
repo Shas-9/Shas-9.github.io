@@ -1,0 +1,42 @@
+%% ============================================================================
+%%  COVER LETTER PREAMBLE  --  the look of every cover letter.
+%%
+%%  Each cover letter file starts with:
+%%      \documentclass[letterpaper,11pt]{article}
+%%      \input{../shared/cover_letter_preamble}
+%% ============================================================================
+
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage[usenames,dvipsnames]{color}
+
+\input{../shared/profile}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.5in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+\pagestyle{empty}
+
+% Name + contact line. Values come from shared/profile.tex.
+\newcommand{\letterHeader}{%
+  \begin{center}
+    \textbf{\Large \profileName} \\ \vspace{3pt}
+    \small \profilePhone\ $|$
+    \href{mailto:\profileEmail}{\profileEmail} $|$
+    \href{https://\profileGithub}{\profileGithub}
+  \end{center}%
+}
+
+% \todo{...} prints a red placeholder so unfinished parts are impossible to miss.
+% "make final-cover-letter" refuses to build while any \todo{ is left.
+\newcommand{\todo}[1]{\textcolor{red}{[#1]}}

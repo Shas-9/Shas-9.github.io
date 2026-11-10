@@ -1,0 +1,26 @@
+# dependencies / build output
+node_modules
+dist
+dist-ssr
+build
+
+# LaTeX junk
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+
+# CV for local `npm run dev` (built by `make site-pdf`; CI builds it for the live site)
+public/Sharzil_Hasnine_Resume.pdf
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*:Zone.Identifier
+*.suo
+*.sw?

@@ -1,0 +1,130 @@
+%% ============================================================================
+%%  FINAL RESUME  --  the version you actually SUBMIT for a specific job.
+%%
+%%  Workflow:  master_resume.tex -> temporary_resume.tex -> this file.
+%%    1. make new-resume        copies the master into temporary_resume.tex
+%%    2. edit temporary_resume.tex for the job (delete/reword; aim for 1 page)
+%%    3. make final-resume      copies temporary -> this file and builds the PDF
+%%    4. make archive NAME=company-role   saves a snapshot under applications/
+%%
+%%  Note: step 3 OVERWRITES this file. Archive it first if you want to keep it.
+%%  (Contact details come from ../shared/profile.tex.)
+%% ============================================================================
+
+\documentclass[letterpaper,11pt]{article}
+\input{../shared/resume_preamble}
+
+\begin{document}
+
+%----------HEADING----------
+\resumeHeader
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{Computer Science graduate (Adelaide University, Nov 2026) who builds working systems end to end: API-based data integrations, ETL pipelines, backend services and CI/CD. Strong in Python and SQL, comfortable reading, testing and correcting code, and experienced in turning stakeholder needs into delivered solutions that real users rely on.}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Bachelor of Computer Science (Advanced)}{\small Feb 2023 -- Nov 2026}
+      {Adelaide University}{}
+  \resumeSubHeadingListEnd
+
+
+  %-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Data \& Automation}{: Python, SQL (MySQL), REST APIs, ETL pipelines, data validation, Pandas, KNIME, REDCap} \\
+     \textbf{Engineering Practice}{: Git, code review, automated testing, CI/CD, Docker, Linux, Bash, Jira} \\
+     \textbf{Other Languages \& Frameworks}{: TypeScript, JavaScript, Node.js, MongoDB, React, Java, Springboot, C++} \\
+    }}
+ \end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+         {\textbf{{Student Data Engineer - REDCap-KNIME Integration - Adelaide University}}}{\small Aug 2026 - Oct 2026}
+         {\emph{\textbf{Tech:}} Python, KNIME, REDCap, REST API}{}
+         \resumeItemListStart
+           \resumeItem{Connected a research data system (REDCap) to an analytics workflow tool (KNIME) by building a custom Python extension using PyCap to pull records and metadata through the REST API into separate typed output tables.}
+           \resumeItem{Implemented metadata-driven ETL and validation: decoded categorical and checkbox fields, enforced field-level validation rules, and preserved longitudinal event and repeating-instrument context.}
+           \resumeItem{Built a controlled test environment of 10,000 synthetic records across 64 fields (no real participant data), enabling reproducible validation of the extraction and ETL workflow.}
+         \resumeItemListEnd
+
+   \resumeSubheading
+         {\textbf{{Industry Project - Block Model Compression Algorithm - Maptek}}}{\small Aug 2025 - Oct 2025}
+         {\emph{\textbf{Tech:}} C++,  Bash, Jira, CI/CD}{}
+         \resumeItemListStart
+           \resumeItem{Built a cross-platform CI pipeline with automated testing and reproducible Linux and Windows builds, integrating cross-compilation and artifact generation into the workflow and improving team velocity by 1.5x.}
+           \resumeItem{Designed an automated, extensible testing framework that verifies compressed outputs against uncompressed input, independent of compression strategy.}
+           \resumeItem{Architected an octree-based lossless compression system for 3D data achieving ~98.8\% size reduction and 2.6x faster processing than baseline, forming the foundation for team optimisations reaching 99.17\% compression and 1520x speed.}
+         \resumeItemListEnd
+
+    \resumeSubheading{\textbf{Software Developer - Autonomous navigation - Adelaide Rover Team}}{\small Oct 2024 - Feb 2025}
+    {\emph{\textbf{Tech:}} Python, C++, Ros2, Nav2, Gazebo}{}
+    \resumeItemListStart
+        \resumeItem{Designed a modular behaviour tree for the rover's autonomous navigation pipeline (Nav2) and validated behaviour in Gazebo simulation ahead of the Australian Rover Challenge.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+   \resumeSubHeadingListStart
+   \resumeSubheading{\textbf{Daily Iftar Registration System}}{\small Feb 2026 - Mar 2026}
+        {\emph{\textbf{Tech:}} Typescript, Node.js, MongoDB, REST API, Docker}{\\ \small \textbf{\emph{Link:}} \href{https://aumsa.com.au/}{aumsa.com.au}}
+        \resumeItemListStart
+            \resumeItem{Delivered production backend features under tight release cycles for a live registration system used by 70+ daily users, working directly from user needs to deployed functionality.}
+            \resumeItem{Built timezone-aware, DST-safe date handling (Australia/Adelaide), eliminating off-by-one scheduling bugs in day-based operations.}
+            \resumeItem{Designed MongoDB schemas and API contracts that supported rapid feature expansion and clean frontend integration.}
+        \resumeItemListEnd
+
+    \resumeSubheading{\textbf{Paxos Consensus Algorithm}}{\small Sep 2025 - Oct 2025}
+    {\textbf{\emph{Tech:}} Java, JUnit, Bash}
+    {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Paxos}{github.com/Shas-9/Paxos}}
+    \resumeItemListStart
+        \resumeItem{Implemented Paxos from scratch with a TCP socket messaging protocol, and a failure simulation framework (latency, message loss, node crashes) to test correctness under partial system failure.}
+    \resumeItemListEnd
+
+    \resumeSubheading{\textbf{Distributed Weather Feed Aggregator with Lamport Clocks}}{\small Aug 2025 - Sep 2025}
+    {\textbf{\emph{Tech:}} Java, JUnit, REST API}
+    {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Weather-Aggregation-Server}{github.com/Shas-9/Weather-Aggregation-Server}}
+    \resumeItemListStart
+        \resumeItem{Built a multi-threaded data aggregation server with Lamport clock ordering, persistent storage with crash recovery, and automated expiry of stale data sources.}
+    \resumeItemListEnd
+   \resumeSubHeadingListEnd
+
+%-----------Community Involevement-----------
+\section{Leadership \& Community}
+   \resumeSubHeadingListStart
+    \resumeSubheading
+    {Secretary}{\small Nov 2024 -- August 2026}
+    {ISSUA}{}
+    \resumeItemListStart
+    \resumeItem{Led communications for a 10+ member committee, producing structured meeting minutes and action items to keep the team aligned and accountable.}
+    \resumeItem{Managed university-facing logistics and administered the society's shared Google Drive records, keeping documentation organised and accessible.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Events Officer}{\small Nov 2023 -- Nov 2024}
+    {ISSUA}{}
+    \resumeItemListStart
+    \resumeItem{Planned and ran events for 100+ attendees, managing logistics, budget, venue and audio-visual setup, and liaising with stakeholders and guests.}
+    \resumeItemListEnd
+
+        \resumeProjectHeading
+         {\textbf{Adelaide University Competitive Programming League}}{\small Mar 2026 -- Oct 2026}
+         \resumeItemListStart
+           \resumeItem{Placed 2nd as a team in the 2026 league.}
+         \resumeItemListEnd
+
+       \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

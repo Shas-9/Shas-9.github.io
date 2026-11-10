@@ -1,0 +1,94 @@
+%% ============================================================================
+%%  MASTER COVER LETTER  --  a template + a library of reusable paragraphs.
+%%
+%%  HOW TO USE
+%%    1. make new-cover-letter     copies this file to temporary_cover_letter.tex
+%%    2. In the temporary file: fill in the "PER-JOB DETAILS" block below.
+%%    3. Keep the opening + 2 or 3 EVIDENCE BLOCKS that best match the job ad,
+%%       delete the rest, and replace every red \todo{...} with real text.
+%%       (Aim for one page: opening, 2-3 blocks, closing.)
+%%    4. make final-cover-letter   promotes it to Sharzil_Hasnine_Cover_Letter.tex
+%%
+%%  Every evidence block below only restates things already on your resume.
+%%  Re-check the numbers against master_resume.tex if you change anything.
+%%  Contact details come from ../shared/profile.tex.
+%% ============================================================================
+
+\documentclass[letterpaper,11pt]{article}
+\input{../shared/cover_letter_preamble}
+
+%---------------------------- PER-JOB DETAILS --------------------------------
+\newcommand{\company}{\todo{Company Name}}
+\newcommand{\role}{\todo{Role Title}}
+\newcommand{\recipient}{Hiring Manager}      % or e.g. "Ms Jane Smith"
+\newcommand{\companyLocation}{\todo{Suburb, State}}   % delete the line in the letter if not needed
+\newcommand{\letterdate}{\today}             % or a fixed date, e.g. {10 November 2026}
+
+\begin{document}
+
+\letterHeader
+
+\vspace{10pt}
+
+\letterdate
+
+\recipient \\
+\company \\
+\companyLocation
+
+\vspace{5pt}
+
+\textbf{Re: \role}
+
+Dear \recipient,
+
+%=========================== OPENING (always keep) ============================
+I am writing to apply for the \role{} position at \company. I am completing a Bachelor of Computer Science (Advanced) at Adelaide University (graduating November 2026) and have built practical experience through industry projects, live production systems and competitive programming. \todo{One or two sentences: why THIS company and THIS role. Mention the 2--3 skills from the job ad you match.}
+
+%====================== EVIDENCE BLOCKS (keep 2 or 3) =========================
+
+%--- BLOCK A: Performance / C++ / algorithms  (Maptek) -------------------------
+%    Use for: C++, systems, performance, data structures, testing, CI.
+My strongest relevant experience comes from an industry project with Maptek, where I worked on a C++ spatial compression system for large 3D datasets. I contributed to a stream-oriented, octree-based compression approach that achieved approximately 98.8\% reduction in data size while improving processing speed by 2.6 times over the uncompressed baseline. As part of the same project, I designed an automated testing framework that verifies compressed output against the source data, and built a cross-platform CI pipeline with reproducible Linux and Windows builds, improving team velocity by 1.5x. \todo{Link this to a requirement in the job ad.}
+
+%--- BLOCK B: Data engineering / ETL  (REDCap-KNIME) ---------------------------
+%    Use for: data engineering, ETL, Python, APIs, data quality, analytics.
+As a Student Data Engineer at Adelaide University, I developed a custom Python-based KNIME node extension that uses PyCap to extract REDCap records and metadata through the REST API into separate, typed output tables. I implemented metadata-driven ETL and validation to decode categorical and checkbox fields and enforce field-level rules, and prepared a controlled test dataset of 10,000 synthetic records across 64 fields so the workflow could be validated reproducibly. \todo{Link this to a requirement in the job ad.}
+
+%--- BLOCK C: Production backend / web  (Iftar system) -------------------------
+%    Use for: backend, APIs, databases, real users, deployment.
+Through the Daily Iftar Registration System, a live platform for a university club that supports 70+ daily users, I delivered production backend features under tight release cycles using Node.js, TypeScript and MongoDB. I designed the database schemas and API contracts, and diagnosed and fixed a recurring scheduling bug by re-architecting the system's timezone-aware date handling. \todo{Link this to a requirement in the job ad.}
+
+%--- BLOCK D: Industry placement  (Synergy IQ) ---------------------------------
+%    Use for: web apps, Python/Flask, scheduling or workflow tools, working with a client.
+During an industry placement with Synergy IQ, I worked on migrating a prototype scheduling tool into a production-grade Flask web application, implementing dynamic constraint logic, visual conflict detection and an editable interface to remove manual scheduling conflicts. \todo{Link this to a requirement in the job ad.}
+
+%--- BLOCK E: Distributed systems  (Paxos, Weather aggregator) -----------------
+%    Use for: backend, concurrency, distributed systems, reliability, Java.
+My distributed systems projects have developed my ability to take software from design through implementation and testing. I implemented the Paxos consensus algorithm in Java using TCP sockets and a failure simulation framework (latency, message loss and node crashes), and built a multi-threaded weather aggregation server using Lamport clocks, with persistent storage, crash recovery and automated expiry of stale data. Both were built without external libraries and validated under failure and concurrent execution. \todo{Link this to a requirement in the job ad.}
+
+%--- BLOCK F: Robotics / hardware-adjacent  (Adelaide Rover Team) --------------
+%    Use for: robotics, embedded, ROS, hardware-adjacent or simulation work.
+As a Software Developer with the Adelaide Rover Team, I designed a behaviour tree for the rover's autonomous navigation pipeline using Nav2 (C++ and Python) and validated it in Gazebo simulation ahead of the Australian Rover Challenge, working alongside robotics and mechatronics-focused teammates. \todo{Link this to a requirement in the job ad.}
+
+%--- BLOCK G: Machine learning  (SVM + neural network) -------------------------
+%    Use for: ML, data science, Python, maths-heavy roles.
+I have implemented machine learning models from first principles in Python: a Support Vector Machine solved through the dual optimisation problem with quadratic programming and an RBF kernel, and a two-layer neural network with forward and backward propagation trained by mini-batch SGD, together with an end-to-end training pipeline covering standardisation, validation splits and hyperparameter search. \todo{Link this to a requirement in the job ad.}
+
+%--- BLOCK H: Teamwork / leadership / problem solving  (ISSUA, AUCPL) ----------
+%    Use for: graduate programs, team-based or client-facing roles.
+Beyond coursework, I served as Events Officer and then Secretary of ISSUA, leading communications for a 10+ member committee and running events for 100+ attendees. I also compete in the Adelaide University Competitive Programming League, where our team placed 2nd in 2026, applying graph algorithms, dynamic programming and advanced data structures under strict time limits.
+
+%--- BLOCK I: Honest gap (optional) --------------------------------------------
+%    Use when the ad lists a skill you have not used professionally yet.
+I have not yet worked professionally with \todo{skill/tool}, and I want to be upfront about that. What I can point to is a record of picking up new tools quickly and applying them properly under real constraints, for example \todo{ROS2/Nav2/Gazebo, KNIME/PyCap, Flask, \ldots} \todo{Close with why you will ramp up quickly.}
+
+%=========================== CLOSING (always keep) ============================
+Thank you for considering my application. I would welcome the opportunity to discuss how I could contribute to \company.
+
+\vspace{10pt}
+
+Sincerely, \\
+\profileName
+
+\end{document}
