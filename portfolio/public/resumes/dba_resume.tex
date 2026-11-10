@@ -1,0 +1,184 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+
+%----------FONT OPTIONS----------
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} %& \textit{\small #4} \\
+    \end{tabular*} % \vspace{-7pt}
+    \textit{\small #4}
+    \vspace{-7pt}
+}
+
+\newcommand{\skillSubheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      %\textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.10in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.14in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+    \textbf{\Huge \scshape Sharzil Hasnine} \\ \vspace{5pt}
+    +61 451 645 516 $|$ \href{mailto:sharzilhasnine975@gmail.com}{sharzilhasnine975@gmail.com} $|$ 
+    \href{https://www.linkedin.com/in/sharzilhasnine/}{{linkedin.com/in/sharzilhasnine}} $|$
+    \href{https://github.com/Shas-9}{{github.com/Shas-9}} \\
+    Portfolio: \href{https://shas-9.github.io/}{shas-9.github.io}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Bachelor of Computer Science (Advanced)}{\small Feb 2023 -- Nov 2027}
+      {Adelaide University}{}
+  \resumeSubHeadingListEnd
+
+
+  %-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: SQL, C++, Java, Typescript, Javascript, Python, C, Bash} \\
+     \textbf{Databases}{: MySQL, MongoDB, RDBMS schema design, query optimisation} \\
+     \textbf{Development Practices}{: Unit testing, debugging, root-cause analysis, CI/CD, technical documentation, change management (Git, Jira)} \\
+     \textbf{Tools and Software}{: Git, Linux, Docker, Jira} \\
+    }}
+ \end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Technical Experience}
+  \resumeSubHeadingListStart
+
+   \resumeSubheading
+         {\textbf{{Industry Project - Block Model Compression Algorithm - Maptek}}}{\small Aug 2025 - Oct 2025}
+         {\emph{\textbf{Tech:}} C++,  Bash, Jira}{}
+         \resumeItemListStart
+           \resumeItem{Analysed existing 3D data processing limitations and designed a stream-oriented compression system to address performance and storage deficiencies, achieving ~98.8\% reduction in data size and a 2.6x speed improvement.}
+           \resumeItem{Tested, debugged, and validated program correctness via a purpose-built testing framework, enabling systematic fault detection independent of implementation strategy.}
+           \resumeItem{Wrote and maintained technical documentation and build procedures as part of a cross-platform CI pipeline, improving team velocity by 1.5x and reducing onboarding friction.}
+         \resumeItemListEnd
+
+    \resumeSubheading{\textbf{Technical Volunteer - Autonomous navigation - Adelaide Rover Team}}{\small Oct 2024 - Feb 2025}
+    {\emph{\textbf{Tech:}} Python, C++, Ros2, Nav2, Gazebo, Groot}{}
+    \resumeItemListStart
+        \resumeItem{Analysed system requirements and designed a modular behavior tree for the rover's autonomous navigation pipeline, enabling structured decision-making across path planning, recovery, and goal execution.}
+        \resumeItem{Simulated and validated navigation behaviour prior to deployment, identifying and correcting logic faults ahead of the Australian Rover Challenge.}
+    \resumeItemListEnd
+    
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Technical Projects}
+   \resumeSubHeadingListStart
+   \resumeSubheading{\textbf{Daily Iftar Registration System}}{\small Feb 2026 - Mar 2026}
+        {\emph{\textbf{Tech:}} Typescript, Node.js, MongoDB, RESTAPI,  Docker}{\\ \small \textbf{\emph{Link:}} \href{https://aumsa.com.au/}{aumsa.com.au}}
+        \resumeItemListStart
+            \resumeItem{Designed and maintained database schemas and API contracts in a live production system used by 70+ daily users, evaluating and evolving system design to support rapid feature expansion without service disruption.}
+            \resumeItem{Diagnosed and corrected a class of date-handling faults by re-architecting DST-safe, timezone-aware logic (Australia/Adelaide), eliminating recurring off-by-one scheduling errors.}
+        \resumeItemListEnd
+
+   \resumeSubheading{\textbf{Distributed Weather Feed Aggregator with Lamport Clocks}}{\small Aug 2025 - Sep 2025}
+    {\textbf{\emph{Tech:}} Java, JUnit, RESTAPI}
+    {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Weather-Aggregation-Server}{github.com/Shas-9/Weather-Aggregation-Server}}
+    \resumeItemListStart
+        \resumeItem{Engineered a multi-threaded aggregation server with persistent storage, crash recovery, and automated stale-data expiry, correcting reliability faults under concurrent workloads.}
+        \resumeItem{Applied unit testing to verify causal-consistency guarantees from a custom Lamport logical clock implementation.}
+    \resumeItemListEnd
+   \resumeSubHeadingListEnd
+
+%-----------Community Involevement-----------
+\section{Extracurricular Experience}
+   \resumeSubHeadingListStart
+    \resumeSubheading
+    {Secretary}{\small Nov 2024 -- Present}
+    {Islamic Student Society of The University of Adelaide (ISSUA), now AUMSA}{}
+    \resumeItemListStart
+    \resumeItem{Guide and support a 10+ member committee, writing structured meeting minutes and action-item documentation to ensure alignment and accountability.}
+    \resumeItem{Report on organisational status to committee stakeholders and maintain organised knowledge repositories via Google Drive.}
+    \resumeItemListEnd
+       \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
