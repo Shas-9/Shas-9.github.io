@@ -1,17 +1,3 @@
-%% ============================================================================
-%%  TEMPORARY RESUME  --  your scratch copy for ONE specific job.
-%%
-%%  Start from a fresh copy of the master with:   make new-resume
-%%  (that overwrites this file), then trim / reword it for the role.
-%%
-%%  TARGET JOB:      (company - role)
-%%  KEY KEYWORDS:    (from the job ad)
-%%
-%%  This file is NOT read by the website. When you are happy with it:
-%%      make temporary-resume   build a PDF to preview it
-%%      make final-resume       promote it to Sharzil_Hasnine_Resume.tex
-%% ============================================================================
-
 \documentclass[letterpaper,11pt]{article}
 \input{../shared/resume_preamble}
 
@@ -33,9 +19,11 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: C++, Java, TypeScript, JavaScript, Python, C, GDScript, MATLAB, Bash} \\
-     \textbf{Libraries and Frameworks}{: Node.js, Spring Boot, MongoDB, MySQL, React, Flask, JUnit, Godot, Pandas, NumPy, Matplotlib, Sklearn, TensorFlow, ROS2} \\
-     \textbf{Tools and Software}{: Git, Linux, Docker, Jira, Gazebo, Nav2} \\
+     \textbf{Data Engineering}{: ETL pipeline design, KNIME, Python, PyCap, REST API integration, metadata-driven transformation, data extraction} \\
+     % TODO: add Azure Data Factory, Spark/PySpark, Kubernetes, Power BI (DAX, semantic models), Microsoft Fabric or any cloud platform ONLY if you have genuinely used them. The ad lists these as essential or key requirements.
+     \textbf{Databases \& Data Quality}{: SQL, MySQL (schema design), MongoDB, data validation, test datasets, data integrity checks} \\
+     \textbf{Analytics \& ML Foundations}{: Pandas, NumPy, Sklearn, Matplotlib, data standardisation, train/validation/test splits, hyperparameter search, model evaluation} \\
+     \textbf{Programming \& Practice}{: Python, Java, TypeScript, JavaScript, C++, Bash, Git, Docker, Linux, automated testing, CI/CD, Jira} \\
     }}
  \end{itemize}
 
@@ -48,16 +36,9 @@
          {\textbf{{Student Data Engineer - REDCap-KNIME Integration - Adelaide University}}}{\small Aug 2026 - Oct 2026}
          {\emph{\textbf{Tech:}} Python, KNIME, REDCap}{}
          \resumeItemListStart
-           \resumeItem{Prepared a controlled REDCap test dataset of 10,000 synthetic records across 64 fields, establishing a reproducible environment for validating API-based data extraction and metadata-driven ETL workflows.}
-           \resumeItem{Developed a custom Python-based KNIME node extension using PyCap to extract REDCap records and metadata through the REST API, exposing both as separate typed KNIME output tables for downstream analysis.}
-           \resumeItem{Implemented metadata-driven ETL and validation to decode categorical and checkbox fields, enforce field-level validation rules, and preserve longitudinal event and repeating-instrument context across REDCap exports.}
-         \resumeItemListEnd
-
-  \resumeSubheading
-         {\textbf{{Industry Placement - Smart Training Planner - Synergy IQ}}}{\small Mar 2026 - May 2026}
-         {\emph{\textbf{Tech:}} Python, Flask, Jira}{}
-         \resumeItemListStart
-           \resumeItem{Developed a Flask-based web application to migrate a prototype into a production-grade automated scheduling system, implementing dynamic constraint logic, visual conflict detection, and an editable user interface to eliminate manual scheduling conflicts.}
+           \resumeItem{Connected a research data system (REDCap) to an analytics workflow tool (KNIME) by building a custom Python extension using PyCap to pull records and metadata through the REST API into separate typed output tables.}
+           \resumeItem{Implemented metadata-driven ETL and validation: decoded categorical and checkbox fields, enforced field-level validation rules, and preserved longitudinal event and repeating-instrument context.}
+           \resumeItem{Built a controlled test environment of 10,000 synthetic records across 64 fields (no real participant data), enabling reproducible validation of the extraction and ETL workflow.}
          \resumeItemListEnd
 
   \resumeSubheading
@@ -96,6 +77,16 @@
          \resumeItemListEnd
 
    \resumeSubheading
+         {\textbf{Organisation and Event Management Website}}{\small Apr 2024 - Jun 2024}
+         {\emph{\textbf{Tech:}} MySQL, REST API, Node.js, Javascript, React}{}
+         % TODO: replace the bracketed date and tech with the real ones; add a GitHub link line if the repo is public.
+         \resumeItemListStart
+           \resumeItem{Designed and implemented the MySQL relational schema for a platform where organisations publish events, users sign up for them, and users follow organisations to see their updates on a personalised homepage.}
+           \resumeItem{Built the REST API endpoints that serve this data, including event sign-ups and the follow-based homepage feed.}
+           % TODO: add a bullet only if true, e.g. constraints/indexes/normalisation, query optimisation, or documentation.
+         \resumeItemListEnd
+
+   \resumeSubheading
          {\textbf{Paxos Consensus Algorithm}}{\small Sep 2025 - Oct 2025}
          {\textbf{\emph{Tech:}} Java, JUnit, Bash}
          {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Paxos}{github.com/Shas-9/Paxos}}
@@ -125,33 +116,33 @@
            \resumeItem{Developed an end-to-end ML training pipeline including data standardization, train/validation/test splits, hyperparameter search, and performance evaluation using accuracy metrics with Sklearn.}
          \resumeItemListEnd
 
-   \resumeSubheading
-         {\textbf{CatQuest -- 2D Maze Exploration Game}}{\small Aug 2023 - Oct 2023}
-         {\emph{\textbf{Tech:}} C++, SFML}
-         {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Labyrinth-game}{github.com/Shas-9/Labyrinth-game}}
-         \resumeItemListStart
-           \resumeItem{Engineered modular game architecture, separating game state, entities, and UI for maintainability and scalability.}
-           \resumeItem{Integrated enemy AI and player mechanics within the existing procedural random maze generation system, including real-time collision handling and health management.}
-           \resumeItem{Designed the game UI, with seamless navigation and state transitions without affecting game loop performance.}
-         \resumeItemListEnd
+  %  \resumeSubheading
+  %        {\textbf{CatQuest -- 2D Maze Exploration Game}}{\small Aug 2023 - Oct 2023}
+  %        {\emph{\textbf{Tech:}} C++, SFML}
+  %        {\\ \textbf{\emph{Link:}} \href{https://github.com/Shas-9/Labyrinth-game}{github.com/Shas-9/Labyrinth-game}}
+  %        \resumeItemListStart
+  %          \resumeItem{Engineered modular game architecture, separating game state, entities, and UI for maintainability and scalability.}
+  %          \resumeItem{Integrated enemy AI and player mechanics within the existing procedural random maze generation system, including real-time collision handling and health management.}
+  %          \resumeItem{Designed the game UI, with seamless navigation and state transitions without affecting game loop performance.}
+  %        \resumeItemListEnd
 
-   \resumeSubheading
-         {\textbf{Monkey Run -- Unihack 2024}}{\small Mar 2024}
-         {\emph{\textbf{Tech:}} GDScript, Godot, Python, MediaPipe}
-         {\\ \textbf{\emph{Link:}} \href{https://github.com/rayokamoto/unihack}{github.com/rayokamoto/unihack}}
-         \resumeItemListStart
-           \resumeItem{Developed an endless runner game with randomised object generation using Godot game engine with GDScript.}
-           \resumeItem{Implemented input detection by tracking player movement through webcam by using MediaPipe ML framework.}
-           \resumeItem{Integrated input detection system with game mechanics to deliver a cohesive gaming experience.}
-         \resumeItemListEnd
+  %  \resumeSubheading
+  %        {\textbf{Monkey Run -- Unihack 2024}}{\small Mar 2024}
+  %        {\emph{\textbf{Tech:}} GDScript, Godot, Python, MediaPipe}
+  %        {\\ \textbf{\emph{Link:}} \href{https://github.com/rayokamoto/unihack}{github.com/rayokamoto/unihack}}
+  %        \resumeItemListStart
+  %          \resumeItem{Developed an endless runner game with randomised object generation using Godot game engine with GDScript.}
+  %          \resumeItem{Implemented input detection by tracking player movement through webcam by using MediaPipe ML framework.}
+  %          \resumeItem{Integrated input detection system with game mechanics to deliver a cohesive gaming experience.}
+  %        \resumeItemListEnd
 
      % --- Older projects, hidden from the PDF and the website. Un-comment to show. ---
-     % \resumeProjectHeading
-     %     {\textbf{\href{https://github.com/Shas-9/Data-visualisation}{Global GDP and Internet Users -- Research}} $|$ \emph{Python, Pandas, NumPy, Matplotlib}}{}
-     %     \resumeItemListStart
-     %       \resumeItem{Analysed 60 years of data sourced from Kaggle to investigate correlation between internet user growth and GDP across nations.}
-     %       \resumeItem{Utilised Pandas library in Python to process data and perform necessary calculations and presented findings through visually compelling graphs generated using Matplotlib.}
-     %       \resumeItem{Identified key insights to discern impact of internet penetration on economic development worldwide.}
+     \resumeProjectHeading
+         {\textbf{\href{https://github.com/Shas-9/Data-visualisation}{Global GDP and Internet Users -- Research}} $|$ \emph{Python, Pandas, NumPy, Matplotlib}}{}
+         \resumeItemListStart
+           \resumeItem{Analysed 60 years of data sourced from Kaggle to investigate correlation between internet user growth and GDP across nations.}
+           \resumeItem{Utilised Pandas library in Python to process data and perform necessary calculations and presented findings through visually compelling graphs generated using Matplotlib.}
+           \resumeItem{Identified key insights to discern impact of internet penetration on economic development worldwide.}
      %     \resumeItemListEnd
      % \resumeProjectHeading
      %     {\textbf{\href{https://github.com/Shas-9/Password-manager}{Password Manager}} $|$ \emph{Python, CustomTkinter}}{}
@@ -169,13 +160,7 @@
    \resumeProjectHeading
          {\textbf{Adelaide University Competitive Programming League (AUCPL)}}{\small Mar 2026 -- Oct 2026}
          \resumeItemListStart
-           \resumeItem{Achieved a team 2nd place finish in the Adelaide University Competitive Programming League (AUCPL) in 2026.}
-         \resumeItemListEnd
-
-   \resumeProjectHeading
-         {\textbf{Adelaide Competitive Programming League (AUCPL)}}{\small Mar 2025 -- Oct 2025}
-         \resumeItemListStart
-           \resumeItem{Achieved a team 4th place finish in the 2025 AUCPL season.}
+           \resumeItem{Achieved a team 2nd place finish in the Adelaide University Competitive Programming League.}
          \resumeItemListEnd
 
    \resumeSubheading

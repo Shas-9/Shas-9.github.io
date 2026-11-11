@@ -1,11 +1,7 @@
-# Résumé / cover-letter helper. Needs: make + a LaTeX install with latexmk (e.g. texlive).
-# PDFs are written to build/ (git-ignored).   Run `make help` for the list.
-
 SHELL := /bin/bash
-LATEXMK = latexmk -pdf -cd -interaction=nonstopmode -halt-on-error -outdir=$(CURDIR)/build
+LATEXMK = LATEXMK = mkdir -p $(CURDIR)/build && cd $(dir $@) && true
 RESUME_DIR = resume
 LETTER_DIR = cover_letter
-# Everything from \documentclass down (the banner comments at the top differ by design).
 body = sed -n '/^\\documentclass/,$$p'
 
 .PHONY: help master-resume temporary-resume resume new-resume final-resume \
@@ -36,7 +32,8 @@ master-resume:
 temporary-resume:
 	$(LATEXMK) $(RESUME_DIR)/temporary_resume.tex
 resume:
-	$(LATEXMK) $(RESUME_DIR)/Sharzil_Hasnine_Resume.tex
+	mkdir -p build
+	cd resume && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=../build Sharzil_Hasnine_Resume.tex
 master-cover-letter:
 	$(LATEXMK) $(LETTER_DIR)/master_cover_letter.tex
 temporary-cover-letter:
